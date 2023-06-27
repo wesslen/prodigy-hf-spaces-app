@@ -1,0 +1,13 @@
+{
+    "port": 7860,
+    "host": "0.0.0.0",
+    "db": "sqlite",
+    "db_settings": {
+      "sqlite": {
+        "name": "prodigy.db",
+        "path": "/app"
+      }
+    },
+    "feed_overlap": true,
+    "show_stats": true
+}

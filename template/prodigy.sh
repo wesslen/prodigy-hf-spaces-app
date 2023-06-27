@@ -1,0 +1,1 @@
+python -m prodigy rlhf.respond rlhf_data data/dataset.jsonl -F recipe.py
