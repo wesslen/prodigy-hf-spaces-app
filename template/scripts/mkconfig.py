@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load configuration file
-config = srsly.read_json("prodigy.json")
+config = srsly.read_json("../prodigy.json")
 
 # Ensure postgres variables in `prodigy.json`
 config["db_settings"]["postgresql"]["user"] = os.environ['POSTGRES_USER']
