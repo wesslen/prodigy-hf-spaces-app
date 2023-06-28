@@ -2,9 +2,15 @@
     "port": 7860,
     "host": "0.0.0.0",
     "db": "postgresql",
-    "instant_submit": true,
-    "annotations_by_task": 3,
-    "project_info": [],
-    "show_stats": false,
-    "feed_overlap": true
+    "db_settings": {
+        "postgresql": {
+            "host": "db-postgres-prodigy-do-user-243383-0.b.db.ondigitalocean.com",
+            "dbname": "defaultdb",
+            "user": "doadmin",
+            "password": "******",
+            "port": 25060
+          }
+    },
+    "instructions": "assets/instructions.html",
+    "annotations_per_task": 3
 }
