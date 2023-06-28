@@ -22,6 +22,11 @@ repo_id = org + "/" + repo_name
 prodigy_key = st.text_input('Prodigy Key')
 auth_user = st.text_input('Prodigy Username')
 auth_pass = st.text_input('Prodigy Password')
+
+# if st.checkbox("Add Postgres DB?"):
+#     postgres_pass = st.text_input('PostgreSQL Password')
+#     postgres_host = st.text_input('PostgreSQL Host')
+#     postgres_db = st.text_input('PostgreSQL Host')
 #repo_dup = "wesslen/prodigy-template-space"
 
 input_file = st.file_uploader("Upload your input (source) file here (`.jsonl`)...", type = ["jsonl"])
@@ -40,7 +45,6 @@ if st.button('Create new HF Space'):
 
     if auth_pass is not None:
         api.add_space_secret(repo_id=repo_id, key="PRODIGY_BASIC_AUTH_PASS", value=auth_pass)
-
 
     api.upload_folder(
         folder_path="template",
@@ -72,8 +76,16 @@ if st.button('Create new HF Space'):
     st.markdown(url, unsafe_allow_html=True)
 
 
+delete_space = st.text_input('Rewrite the name of the Space')
+
 if st.button('Delete HF Space'):
 
-    api.delete_repo(repo_id, repo_type = "space")
+    if delete_space == repo_name:
 
-    st.write("Deleted HF Space: " + repo_id)
+        api.delete_repo(repo_id, repo_type = "space")
+
+        st.write("Deleted HF Space: " + repo_id)
+
+    if delete_space != repo_name:
+
+        st.write("Type in the correct HF space and retry")
