@@ -1,4 +1,4 @@
-# prodigy-hf-spaces-app
+# Prodigy HuggingFace Spaces Streamlit App
 
 ## Getting started
 
